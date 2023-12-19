@@ -1,0 +1,14 @@
+name: deploy-backend
+run-name: ${{ github.actor }} is deploying...
+on: [push]
+
+jobs:
+  deploy-to-server:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Application
+        working-directory: ./
+        run: npm install && npm start
