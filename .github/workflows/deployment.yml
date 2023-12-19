@@ -9,14 +9,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Shutdown existing containers
+        run: docker rm $(docker ps -q)
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build and deploy
+      - name: Run Docker
         working-directory: ./
-        run: start npm -ArgumentList "run build"
+        run: docker-compose up -d
