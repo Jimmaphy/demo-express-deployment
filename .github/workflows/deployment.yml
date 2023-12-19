@@ -11,4 +11,4 @@ jobs:
 
       - name: Run Application
         working-directory: ./
-        run: npm install && npm start
+        run: npm install; npm start
