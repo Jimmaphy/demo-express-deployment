@@ -9,8 +9,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Shutdown existing containers
-        run: docker rm $(docker ps -q)
+#      - name: Shutdown existing containers
+#        run: docker rm $(docker ps -q)
 
       - name: Run Docker
         working-directory: ./
